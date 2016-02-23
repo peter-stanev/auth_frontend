@@ -81,12 +81,12 @@ var source = {
 
 // BUILD TARGET CONFIG 
 var build = {
-    scripts: paths.pubilc + 'js',
-    styles: paths.pubilc + 'css',
+    scripts: paths.public + 'js',
+    styles: paths.public + 'css',
     templates: {
         index: '../',
-        views: paths.pubilc,
-        cache: paths.pubilc + 'js/' + 'templates.js',
+        views: paths.public,
+        cache: paths.public + 'js/' + 'templates.js',
     }
 };
 
@@ -182,24 +182,24 @@ gulp.task('vendor:public', function () {
     var jsFilter = $.filter('**/*.js');
     var cssFilter = $.filter('**/*.css');
 
-    return gulp.src(vendor.pubilc.source, {
+    return gulp.src(vendor.app.source, {
             base: 'bower_components'
         })
-        .pipe($.expectFile(vendor.pubilc.source))
+        .pipe($.expectFile(vendor.app.source))
         .pipe(jsFilter)
         .pipe($.if(isProduction, $.uglify(vendorUglifyOpts)))
         .pipe(jsFilter.restore())
         .pipe(cssFilter)
         .pipe($.if(isProduction, $.minifyCss()))
         .pipe(cssFilter.restore())
-        .pipe(gulp.dest(vendor.pubilc.dest));
+        .pipe(gulp.dest(vendor.app.dest));
 
 });
 
 // APP LESS
 gulp.task('styles:public', function () {
     log('Building application styles..');
-    return gulp.src(source.styles.pubilc)
+    return gulp.src(source.styles.app)
         .pipe($.if(useSourceMaps, $.sourcemaps.init()))
         .pipe(useSass ? $.compass(compassOpts) : $.less())
         .on('error', handleError)
@@ -211,7 +211,7 @@ gulp.task('styles:public', function () {
 // APP RTL
 gulp.task('styles:public:rtl', function () {
     log('Building application RTL styles..');
-    return gulp.src(source.styles.pubilc)
+    return gulp.src(source.styles.app)
         .pipe($.if(useSourceMaps, $.sourcemaps.init()))
         .pipe(useSass ? $.compass(compassOpts) : $.less())
         .on('error', handleError)
@@ -332,7 +332,7 @@ gulp.task('clean', function (done) {
         build.templates.index + 'index.html',
         build.templates.views + 'views',
         build.templates.views + 'pages',
-        vendor.pubilc.dest
+        vendor.app.dest
     );
 
     log('Cleaning: ' + $.util.colors.blue(delconfig));
