@@ -53,7 +53,7 @@ var vendor = {
   // vendor scripts to make the app work. Usually via lazy loading
   app: {
     source: require('./app/vendor.json'),
-    dest: 'vendor'
+    dest: 'public/vendor'
   }
 };
 
@@ -105,14 +105,14 @@ var vendorUglifyOpts = {
 };
 
 var compassOpts = {
-    project: path.join(__dirname, '../'),
+    project: path.join(__dirname),
     css: 'public/css',
     sass: 'app/sass/',
     image: 'public/img'
 };
 
 var compassOptsThemes = {
-    project: path.join(__dirname, '../'),
+    project: path.join(__dirname),
     css: 'public/css',
     sass: 'app/sass/themes/', // themes in a subfolders
     image: 'public/img'
