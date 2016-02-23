@@ -16,7 +16,7 @@ var useSourceMaps = false;
 // Switch to sass mode.
 // Example:
 //    gulp --usesass
-var useSass = args.usesass;
+var useSass = true;
 
 // Angular template cache
 // Example:
