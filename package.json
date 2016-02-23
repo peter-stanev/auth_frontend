@@ -1,0 +1,24 @@
+{
+  "name": "AuthFrontend",
+  "version": "0.0.0",
+  "description": "Frontend - AuthApp",
+  "author": "georgi",
+  "engines": {
+    "node": "5.4.0"
+  },
+  "dependencies": {
+    "gulp": "^3.8.10",
+    "gulp-install": "^0.6.0",
+    "bower": "^1.7.7",
+    "express": "^4.13.4",
+    "yargs": "^4.1.0",
+    "path": "^0.12.7",
+    "css-flip": "^0.5.0",
+    "through2": "^2.0.1",
+    "gulp-load-plugins": "^1.2.0",
+    "del": "^2.2.0"
+  },
+  "scripts": {
+    "start": "npm install"
+  }
+}
