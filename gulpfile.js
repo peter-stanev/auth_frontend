@@ -31,14 +31,14 @@ var ignored_files = '!' + hidden_files;
 var paths = {
   public: './public/',
   markup: './app/jade/',
-  styles: './app/less/',
+  styles: './app/sass/',
   scripts: './app/js/'
 }
 
 // if sass -> switch to sass folder
 if (useSass) {
     log('Using SASS stylesheets...');
-    paths.styles = 'sass/';
+    paths.styles = './app/sass/';
 }
 
 
@@ -198,32 +198,17 @@ gulp.task('vendor:public', function () {
 
 // APP LESS
 gulp.task('styles:public', function () {
-    log('Building application styles..');
-    return gulp.src(source.styles.app)
-        .pipe($.if(useSourceMaps, $.sourcemaps.init()))
-        .pipe(useSass ? $.compass(compassOpts) : $.less())
-        .on('error', handleError)
-        .pipe($.if(isProduction, $.minifyCss()))
-        .pipe($.if(useSourceMaps, $.sourcemaps.write()))
-        .pipe(gulp.dest(build.styles));
+  log('Building application styles..');
+  log(source.styles.app)
+  return gulp.src(source.styles.app)
+    .pipe($.if(useSourceMaps, $.sourcemaps.init()))
+    .pipe(useSass ? $.compass(compassOpts) : $.less())
+    .on('error', handleError)
+    .pipe($.if(isProduction, $.minifyCss()))
+    .pipe($.if(useSourceMaps, $.sourcemaps.write()))
+    .pipe(gulp.dest(build.styles));
 });
 
-// APP RTL
-gulp.task('styles:public:rtl', function () {
-    log('Building application RTL styles..');
-    return gulp.src(source.styles.app)
-        .pipe($.if(useSourceMaps, $.sourcemaps.init()))
-        .pipe(useSass ? $.compass(compassOpts) : $.less())
-        .on('error', handleError)
-        .pipe(flipcss())
-        .pipe($.if(isProduction, $.minifyCss()))
-        .pipe($.if(useSourceMaps, $.sourcemaps.write()))
-        .pipe($.rename(function (path) {
-            path.basename += "-rtl";
-            return path;
-        }))
-        .pipe(gulp.dest(build.styles));
-});
 
 // LESS THEMES
 gulp.task('styles:themes', function () {
@@ -287,7 +272,7 @@ gulp.task('watch', function () {
     $.livereload.listen();
 
     gulp.watch(source.scripts, ['scripts:public']);
-    gulp.watch(source.styles.watch, ['styles:public', 'styles:public:rtl']);
+    gulp.watch(source.styles.watch, ['styles:public']);
     gulp.watch(source.styles.themes, ['styles:themes']);
     gulp.watch(source.templates.views, ['templates:views']);
     gulp.watch(source.templates.index, ['templates:index']);
@@ -380,7 +365,6 @@ gulp.task('default', gulpsync.sync([
 gulp.task('assets', [
           'scripts:public',
           'styles:public',
-          'styles:public:rtl',
           'styles:themes',
           'templates:index',
           'templates:views'
