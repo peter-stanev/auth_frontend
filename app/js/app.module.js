@@ -1,16 +1,3 @@
-/*!
- * 
- * Komae Babysitting Exchange
- * 
- * Version: 3.2.0
- * Author: Komae
- * Website: http://www.mykoame.com
- * License: https://wrapbootstrap.com/help/licenses
- * 
- */
-
-
-
 // APP START
 // ----------------------------------- 
 
@@ -20,8 +7,7 @@
   angular
     .module('demo', [
       'app.core',
-      'app.settings',
-      'app.routes'
+      'app.settings'
 
     ])
     .constant('config', {
