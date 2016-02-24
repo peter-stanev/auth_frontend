@@ -54,37 +54,37 @@ function routesConfig($stateProvider, $locationProvider, $urlRouterProvider, hel
     // -----------------------------------
     .state('page', {
       url: '/page',
-      templateUrl: 'app/pages/page.html'
+      templateUrl: 'public/pages/page.html'
     })
     .state('page.login', {
       url: '/login',
       title: 'Login',
-      templateUrl: 'app/pages/login.html'
+      templateUrl: 'public/pages/login.html'
     })
     .state('page.register', {
       url: '/register',
       title: 'Register',
-      templateUrl: 'app/pages/register.html'
+      templateUrl: 'public/pages/register.html'
     })
     .state('page.recover', {
       url: '/recover',
       title: 'Recover',
-      templateUrl: 'app/pages/recover.html'
+      templateUrl: 'public/pages/recover.html'
     })
     .state('page.recover-change-password', {
       url: '/recover-change-password',
       title: 'Recover Change Password',
-      templateUrl: 'app/pages/recover-change-password.html'
+      templateUrl: 'public/pages/recover-change-password.html'
     })
     .state('page.lock', {
       url: '/lock',
       title: 'Lock',
-      templateUrl: 'app/pages/lock.html'
+      templateUrl: 'public/pages/lock.html'
     })
     .state('page.404', {
       url: '/404',
       title: 'Not Found',
-      templateUrl: 'app/pages/404.html'
+      templateUrl: 'public/pages/404.html'
     })
     //
     //
