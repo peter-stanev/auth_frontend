@@ -1,9 +1,6 @@
 .block-center.mt-xl.wd-xl(ng-controller="LoginFormController as login")
   // START panel
   .panel.panel-dark.panel-flat
-    .panel-heading.text-center
-      a(ui-sref="page.login")
-        img#logo.block-center(src='app/img/logo.svg', alt='Image')
     .panel-body
       p.text-center.pv SIGN IN TO CONTINUE
       form.form-validate(role='form', ng-submit="login.login()", name='login.loginForm', novalidate='').mb-lg
