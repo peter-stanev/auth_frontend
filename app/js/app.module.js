@@ -16,7 +16,7 @@
   'use strict';
 
   angular
-    .module('komae', [
+    .module('demo', [
       'app.core'
     ])
     .constant('config', {
