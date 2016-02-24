@@ -10,6 +10,7 @@
  */
 
 
+
 // APP START
 // ----------------------------------- 
 
@@ -18,8 +19,7 @@
 
   angular
     .module('demo', [
-      'ui.bootstrap',
-      'ui.router'
+      'app.core'
     ])
     .constant('config', {
       apiBaseUrl: 'http://localhost:3000/'
