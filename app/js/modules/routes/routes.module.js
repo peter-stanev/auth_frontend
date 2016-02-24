@@ -1,8 +1,6 @@
 (function() {
-    'use strict';
+  'use strict';
 
-    angular
-        .module('app.routes', [
-            'app.lazyload'
-        ]);
+  angular
+    .module('app.routes');
 })();
