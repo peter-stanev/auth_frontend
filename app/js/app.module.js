@@ -8,7 +8,9 @@
     .module('demo', [
       'app.core',
       'app.settings',
-      'app.routes'
+      'app.routes',
+      'app.pages',
+      'app.utils'
     ])
     .constant('config', {
       apiBaseUrl: 'http://localhost:3000/'
