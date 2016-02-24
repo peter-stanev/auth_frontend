@@ -4,7 +4,7 @@
     angular
         .module('custom', [
             // request the the entire framework
-            'komae',
+            'demo',
             // or just modules
             'app.core',
             'app.sidebar'

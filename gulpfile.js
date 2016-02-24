@@ -84,7 +84,7 @@ var build = {
     scripts: paths.public + 'js',
     styles: paths.public + 'css',
     templates: {
-        index: '../',
+        index: './',
         views: paths.public,
         cache: paths.public + 'js/' + 'templates.js',
     }

@@ -17,7 +17,7 @@
 
   angular
     .module('demo', [
-      'app.core'
+
     ])
     .constant('config', {
       apiBaseUrl: 'http://localhost:3000/'
