@@ -43,18 +43,8 @@
 @import "app/half-float";
 @import "app/masonry-grid";
 @import "app/widget";
-@import "app/typeahead";
-@import "app/table-grid";
-@import "app/todo";
-@import "app/ngwig";
 @import "app/ngdialog";
-@import "app/nestable";
-@import "app/carousel";
-@import "app/masonry-grid-deck";
 
-// Charts
-@import "app/chart-flot";
-@import "app/chart-easypie";
 
 // Form elements
 @import "app/form-elements";
@@ -73,29 +63,3 @@
 @import "app/table-uigrid";
 @import "app/table-angulargrid";
 
-// Plugins
-@import "app/plugins";
-@import "app/slim-scroll";
-@import "app/datepicker";
-@import "app/alerts";
-@import "app/notify";
-@import "app/calendar";
-@import "app/spinner";
-@import "app/gmap";
-@import "app/vector-map";
-@import "app/portlets";
-
-// Mailbox
-@import "app/mailbox";
-
-// Utilities
-@import "app/utils";
-
-// Print CSS
-@import "app/print";
-
-// Settings
-@import "app/settings";
-
-// Documentation
-@import "app/docs";
