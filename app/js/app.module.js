@@ -7,8 +7,8 @@
   angular
     .module('demo', [
       'app.core',
-      'app.settings'
-
+      'app.settings',
+      'app.routes'
     ])
     .constant('config', {
       apiBaseUrl: 'http://localhost:3000/'

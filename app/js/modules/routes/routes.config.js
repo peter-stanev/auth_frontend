@@ -30,14 +30,12 @@ function routesConfig($stateProvider, $locationProvider, $urlRouterProvider, hel
     .state('app', {
       url: '/app',
       abstract: true,
-      templateUrl: helper.basepath('app.html'),
-      resolve: helper.resolveFor('fastclick', 'modernizr', 'icons', 'screenfull', 'animo', 'sparklines', 'slimscroll', 'classyloader', 'toaster', 'whirl')
+      templateUrl: helper.basepath('app.html')
     })
     .state('app.dashboard', {
       url: '/dashboard',
       title: 'Dashboard',
-      templateUrl: helper.basepath('dashboard.html'),
-      resolve: helper.resolveFor('flot-chart', 'flot-chart-plugins', 'weather-icons')
+      templateUrl: helper.basepath('dashboard.html')
     })
     .state('app.new-request', {
       url: '/new-request',
@@ -49,19 +47,14 @@ function routesConfig($stateProvider, $locationProvider, $urlRouterProvider, hel
       title: 'Home',
       controller: 'HomeController',
       controllerAs: 'home',
-      templateUrl: helper.basepath('home.html'),
-      resolve: helper.resolveFor('flot-chart', 'flot-chart-plugins', 'vector-map', 'vector-map-maps')
+      templateUrl: helper.basepath('home.html')
     })
     //
     // Single Page Routes
     // -----------------------------------
     .state('page', {
       url: '/page',
-      templateUrl: 'app/pages/page.html',
-      resolve: helper.resolveFor('modernizr', 'icons'),
-      controller: ['$rootScope', function ($rootScope) {
-        $rootScope.app.layout.isBoxed = false;
-      }]
+      templateUrl: 'app/pages/page.html'
     })
     .state('page.login', {
       url: '/login',
