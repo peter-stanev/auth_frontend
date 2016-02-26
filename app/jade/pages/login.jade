@@ -14,25 +14,11 @@
           span.fa.fa-lock.form-control-feedback.text-muted
           span.text-danger(ng-show="login.loginForm.account_password.$dirty && login.loginForm.account_password.$error.required") This field is required
         .clearfix
-          .checkbox.c-checkbox.pull-left.mt0
-            label
-              input(type='checkbox', value='', name="account_remember", ng-model="login.account.remember")
-              span.fa.fa-check
-              |  Remember Me
           .pull-right
             a.text-muted(ui-sref="page.recover") Forgot your password?
-        
+
         button.btn.btn-block.btn-primary.mt-lg(type="submit") Sign in
-        .text-center.pv OR SIGN IN WITH
-        .row
-          .col-xs-6
-            a.btn.btn-primary.btn-block.facebook(href='#' ng-click="login.authFacebook()")
-              i.fa.fa-facebook
-              | Facebook
-          .col-xs-6
-            a.btn.btn-primary.btn-block.google(href='#' ng-click="login.authGoogle()")
-              i.fa.fa-google
-              | Google
+
       .alert.alert-danger.text-center(ng-show='login.authMsg') {{login.authMsg}}
       p.pt-lg.text-center.clear Need to Signup?
       a(ui-sref="page.register").btn.btn-block.btn-default Register Now
