@@ -13,7 +13,7 @@
       'app.utils'
     ])
     .constant('config', {
-      apiBaseUrl: 'http://localhost:3000/'
+      apiBaseUrl: 'http://localhost:8080/'
     })
   ;
   //var baseURL = "http://api.mykomae.com/";
